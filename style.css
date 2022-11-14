@@ -1,0 +1,129 @@
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+  font-size: 14px;
+  /* font-family: "Fraunces", serif; */
+  font-family: "Montserrat", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1,
+p {
+  margin: 0;
+}
+
+body {
+  background-color: var(--cream);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: min(52rem, 100% - 2rem);
+  background: var(--white);
+  display: grid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  grid-template-columns: repeat(2, 50%);
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+  height: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 2.5rem;
+}
+
+.letter-spacing {
+  letter-spacing: 0.5rem;
+}
+
+p {
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+h1,
+.price {
+  font-family: "Fraunces", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+}
+
+.realprice {
+  color: var(--dark-cyan);
+}
+.oldprice {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  text-decoration: line-through;
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+button {
+  background-color: var(--dark-cyan);
+  color: var(--white);
+  padding: 1rem 2rem;
+  border: 0;
+  border-radius: 0.5rem;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+button:hover {
+  background-color: hsl(158, 36%, 18%);
+}
+
+button span.icon {
+  background: url(./images/icon-cart.svg) no-repeat left center;
+  padding-left: 25px;
+}
+
+h1 {
+  line-height: 1;
+  color: var(--very-dark-blue);
+}
+
+@media (max-width: 650px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 35% 65%;
+  }
+  img {
+    content: url(./images/image-product-mobile.jpg);
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  .content {
+    gap: 1.5rem;
+  }
+}
